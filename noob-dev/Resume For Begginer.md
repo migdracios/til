@@ -17,7 +17,7 @@
 
 ## 🔥트러블슈팅
 <details>
-<summary>1. 적절한 용어 사용하기</summary>
+<summary>🚩적절한 용어 사용하기</summary>
 <div markdown="1">
 
 <br>
@@ -30,7 +30,7 @@
 </details>
 
 <details>
-<summary>2. 구체적인 예시 작성하기</summary>
+<summary>🚩구체적인 예시 작성하기</summary>
 <div markdown="1">
 
 <br>
@@ -42,7 +42,7 @@
 </details>
 
 <details>
-<summary>3. 프로젝트는 내가 한 역할을 위주로 작성하기</summary>
+<summary>🚩프로젝트는 내가 한 역할을 위주로 작성하기</summary>
 <div markdown="1">
 
 <br>
