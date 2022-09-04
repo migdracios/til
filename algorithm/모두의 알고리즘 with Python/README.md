@@ -102,7 +102,7 @@ print(abs_square(-7))
 </details>    
 
 <details>
-<summary>설계한 알고리즘</summary>
+<summary>합 저장 방식</summary>
 <div markdown="1">
 
 ```python
@@ -117,7 +117,7 @@ def sum_n(n):
 </details>
 
 <details>
-<summary></summary>
+<summary>가우스 방식</summary>
 <div markdown="1">
 
 ```python
