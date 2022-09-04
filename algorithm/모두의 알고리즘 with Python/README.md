@@ -84,7 +84,46 @@ print(abs_square(-7))
 
 ## 📜예시. 1부터 n까지의 합 구하기
 
-    
+<details>
+<summary>알고리즘 설계</summary>
+<div markdown="1">
 
+    - 문제 : 1부터 n까지의 합에서 어떤 수가 들어가더라도 동일한 값을 계산할 수 있어야함
+    - 입력 : 마지막 합할 숫자 
+    - 출력 : 1부터 n까지 더한 값
 
+    <br>
 
+    - 설계하기
+    - 1더하기2를 계산한 결과를 저장, 저장한 결과와 3을 계산한 결과를 다시 저장, ...
+    - 입력한 마지막 숫자만큼 반복하기
+
+</div>
+</details>    
+
+<details>
+<summary>설계한 알고리즘</summary>
+<div markdown="1">
+
+```python
+def sum_n(n):
+    s = 0
+    for i in range(1, n+1):
+        s = s + 1
+    return s
+```
+
+</div>
+</details>
+
+<details>
+<summary></summary>
+<div markdown="1">
+
+```python
+def sum_n(n):
+    return n * (n+1) // 2 # 슬래시 두 개(//)는 정수 나눗셈을 의미
+```
+
+</div>
+</details>
