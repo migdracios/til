@@ -301,3 +301,26 @@ print(fact(test_num))
 </details>
 
 ## 문제. 재귀 호출
+    - 문제 : 함수 안에서 함수를 호출하자
+    - 입력 : 없음
+    - 출력 : 없음
+
+<details>
+<summary>무한 헬로</summary>
+<div markdown="1">
+
+```python
+def inf_hello():
+    print("hello")
+    inf_hello()
+inf_hello()
+```
+
+```shell
+RecursionError: maximum recursion depth exceeded while calling a Python object
+```
+
+    - 함수를 실행하면, 함수 안의 함수를 실행하는 것을 반복하는 것이 끝나지 않아 발생하는 오류 메시지
+
+</div>
+</details>
