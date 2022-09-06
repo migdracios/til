@@ -11,12 +11,22 @@ def alarm(hour, minute):
     1. 분에 15를 더한다.
     2. 시각에 1을 뺀다.
     3. 만약 숫자가 0이라면, 24로 변경
+    4. 분이 45보다 크다면 더하기 대신 45빼기
+    5. 45보다 분이 크다면 시각을 빼지 않음
+    ---
+    case1. 분이 45보다 큰 경우
+    case2. 아닐 경우
     '''
+    if minute >= 45:
+        minute -= 45
+        print(hour, minute)
+        return 1    
     minute += 15
     if hour == 0:
         hour = 24
     hour -= 1
     print(hour,minute)
+    return 1
     
 hr, min = map(int, input().split())
 alarm(hr, min)
