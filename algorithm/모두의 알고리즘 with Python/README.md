@@ -161,8 +161,6 @@ def sum_n(n):
 - 출력 : 리스트 중의 가장 큰 수
 - 설계 : 리스트의 처음 숫자부터 하나씩 비교해 보는 것은 어떨까?
 
-
-
 </div>
 </details>
 
@@ -223,5 +221,83 @@ test_list = [1,3,5,2,4,9,6,8]
 print(find_maxnum_index(test_list))
 ```
 
+- 역시 반복문만큼 연산해야 하므로 O(n) 만큼의 복잡도를 나타낸다
+
 </div>
 </details>
+
+## 문제. 동명이인 구하기
+
+    - 문제 : n명의 사람들 중에 같은 이름을 가진 사람을 집합으로 만들어라
+    - 입력 : 사람 이름을 값으로 가지고 있는 n개의 리스트
+    - 출력 : 같은 이름의 사람을 가지고 있는 집합
+
+<br>
+
+    - 같은 값을 찾아내기 위해서는 리스트의 값을 돌아가면서 같은 리스트 안의 값과 비교해야 한다.
+    - 비교가 끝났다면 다음 값도 리스트의 값을 돌아가면서 비교해야 한다.
+
+<details>
+<summary>동명이인 찾기 알고리즘</summary>
+<div markdown="1">
+
+```python
+def find_sameone(list_people):
+    '''
+    5개의 이름이 들어있는 리스트
+    1. 리스트의 길이를 변수에 저장
+    2. 결과를 저장할 빈 집합
+    3. 0부터 n-2까지 반복 -> 모두 비교했으니 맨끝은 비교할 필요가 없기 때문
+    4. i+1 부터 n-1까지 반복 -> 비교대상1은 처음부터, 비교대상2는 그 다음부터이기 때문
+    5. a[i]와 a[j]가 같다면, 이름을 결과 집합에 저장
+    '''
+    len_list = len(list_people)
+    sameone = set()
+    for i in range(0, len_list-1):
+        for j in range(i+1, len_list):
+            if list_people[i] == list_people[j]:
+                sameone.add(list_people[i])
+    return sameone
+
+test_list = ["황영상", "김희정", "한건희", "김태인", "황영상"]
+print(find_sameone(test_list))
+```
+
+</div>
+</details>
+
+# 재귀 호출
+
+    - 재귀호출은 함수 안에서 다시 함수를 호출하는 행위
+    - 마트료시카처럼 인형 안에 인형이 있는 것처럼 
+
+## 문제. 팩토리얼 구하기
+
+    - 문제 : 1부터 n까지의 연속한 숫자를 곱하기
+    - 입력 : 마지막 숫자 n
+    - 출력 : 1부터 n까지의 숫자 곱
+
+    <br>
+
+    - 값을 저장해서 1부터 마지막 숫자까지 곱한 값을 저장, 곱하기를 반복하기
+    - O(n)의 복잡도가 필요하다
+
+<details>
+<summary>팩토리얼 알고리즘</summary>
+<div markdown="1">
+
+```python
+def fact(n):
+    f = 1
+    for i in range(1, n+1):
+        f *= i
+    return f
+    
+test_num = 3
+print(fact(test_num)) 
+```
+
+</div>
+</details>
+
+## 문제. 재귀 호출
