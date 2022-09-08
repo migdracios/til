@@ -20,7 +20,7 @@ CONTENT
 - Generic View를 참조하여 구현하고, 그 사용법을 숙지한다
 
 </div>
-<details>
+</details>
 
 <details>
 <summary>👁‍🗨 레퍼런스</summary>
@@ -31,7 +31,7 @@ CONTENT
 ### [📜DRF 공식문서Pagination](https://www.django-rest-framework.org/api-guide/pagination/)
 
 </div>
-<details>
+</details>
 
 <details>
 <summary>🖋 학습포인트</summary>
@@ -111,7 +111,7 @@ from rest_framework import generics
 ```
 
 </div>
-<details>
+</details>
 
 <details>
 <summary>💾구현코드 - Viewset</summary>
@@ -151,7 +151,7 @@ urlpatterns = [
 ```
 
 </div>
-<details>
+</details>
 
 <details>
 <summary>💾구현코드 - Generic View</summary>
@@ -184,4 +184,4 @@ class ArchaivePagination(generics.ListAPIView):
 ```
 
 </div>
-<details>
+</details>
