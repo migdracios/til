@@ -8,17 +8,13 @@ a와 b의 최대공약수는 b와 b를 a로 나눈 나머지와 같다.
 '''
 
 def find_gcd(num1, num2):
-    
-    if num2 == 0:
-        return num1
-    gcd_num1 = num2
-    gcd_num2 = num2 % num1
-    find_gcd(gcd_num1, gcd_num2)
+    min_num = min(num1, num2)
+    max_num = max(num1, num2)
+    if min_num == 0:
+        return max_num
+    # 함수를 실행하고 끝나는게 아니라 함수를 인자를 넣어 반환해야 한다!
+    return find_gcd(min_num, max_num % min_num)
     
 test1, test2 = 60, 24
-
-def gcd(a, b):
-    print(a % b)
-    print(b % a)
-    
-gcd(20, 12)
+result = find_gcd(test1, test2)
+print(result)

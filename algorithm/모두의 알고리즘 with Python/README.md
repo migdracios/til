@@ -360,6 +360,21 @@ print(find_gcd(num1,num2))
 <summary>유클리드 최대공약수 알고리즘</summary>
 <div markdown="1">
 
+```python
+def find_gcd(num1, num2):
+    min_num = min(num1, num2)
+    max_num = max(num1, num2)
+    if min_num == 0:
+        return max_num
+    # 함수를 실행하고 끝나는게 아니라 함수를 인자를 넣어 반환해야 한다!
+    return find_gcd(min_num, max_num % min_num)
+    
+test1, test2 = 60, 24
+result = find_gcd(test1, test2)
+print(result)
+```
+
+    - 트러블슈팅 : 재귀함수는 함수를 재귀호출 할 때 반환하는 것으로 작동한다
 
 </div>
 </details>
