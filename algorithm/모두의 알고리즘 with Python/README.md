@@ -324,3 +324,34 @@ RecursionError: maximum recursion depth exceeded while calling a Python object
 
 </div>
 </details>
+
+## 문제. 최대공약수 구하기
+    - 문제 : 두 개의 정수의 최대공약수를 구하기
+    - 입력 : 두 개의 수
+    - 출력 : 두 수의 최대공약수
+
+<br>
+
+    - 두 수 중 더 작은 값을 변수로 저장
+    - 변수로 두 수가 모두 나눠지는지 검사
+    - 아니라면 변수를 1감소 후 검사 반복
+    - 맞다면 해당 수를 리턴
+
+<details>
+<summary>값 저장 알고리즘</summary>
+<div markdown="1">
+
+```python
+def find_gcd(num1, num2):
+    target_number = num1 if num1 > num2 else num2
+    while target_number != 1:
+        if num1 % target_number == 0 and num2 % target_number == 0:
+            return target_number
+        target_number -= 1
+
+num1, num2 = 20, 12
+print(find_gcd(num1,num2))
+```
+
+</div>
+</details>
