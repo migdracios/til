@@ -355,3 +355,11 @@ print(find_gcd(num1,num2))
 
 </div>
 </details>
+
+<details>
+<summary>유클리드 최대공약수 알고리즘</summary>
+<div markdown="1">
+
+
+</div>
+</details>
