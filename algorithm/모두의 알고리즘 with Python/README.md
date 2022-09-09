@@ -356,6 +356,11 @@ print(find_gcd(num1,num2))
 </div>
 </details>
 
+    - 유클리드 알고리즘
+    - 최대공약수(a, b) = 최대공약수(b, b%a) 이다
+    - 어떤 수와 0의 최대공약수는 자기자신이므로 최대공약수(a, 0) = a
+    - 위 법칙과 재귀호출을 사용하여 반복해서 문제를 풀이
+
 <details>
 <summary>유클리드 최대공약수 알고리즘</summary>
 <div markdown="1">
@@ -378,3 +383,5 @@ print(result)
 
 </div>
 </details>
+
+## 문제. 하노이탑
