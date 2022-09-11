@@ -15,4 +15,7 @@ def hanoi(n, from_pos, to_pos, aux_pos):
     # 원반이 한 개가 아닐 경우,
     # n-1개를 중간목적지인 aux_pos로 이동, to_pos를 보조로 사용
     hanoi(n-1, from_pos, aux_pos, to_pos)
+    print(from_pos, "->", to_pos)
+    hanoi(n-1, from_pos, to_pos, aux_pos)
     
+hanoi(3,1,3,2)
