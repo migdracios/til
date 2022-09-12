@@ -16,6 +16,20 @@ def hanoi(n, from_pos, to_pos, aux_pos):
     # n-1개를 중간목적지인 aux_pos로 이동, to_pos를 보조로 사용
     hanoi(n-1, from_pos, aux_pos, to_pos)
     print(from_pos, "->", to_pos)
-    hanoi(n-1, from_pos, to_pos, aux_pos)
+    hanoi(n-1, aux_pos, to_pos, from_pos)
     
-hanoi(3,1,3,2)
+
+
+
+def hanoi2(disk, start_post, end_post, support_post):
+    # 원반 한 개
+    if disk == 1:
+        print(f"{start_post}-->{end_post}")
+        return
+    # 원반 두 개 이상
+    # 마지막 원반 전까지 support_post로 이동, end_post가 보조 기둥으로 활용
+    hanoi2(disk-1, start_post, support_post, end_post)
+    # 마지막 원반을 end_post로 이동
+    print(print(f"{start_post}-->{end_post}"))
+    
+hanoi2(3,1,3,2)
