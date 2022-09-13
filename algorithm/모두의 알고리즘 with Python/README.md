@@ -385,6 +385,7 @@ print(result)
 </details>
 
 ## 문제. 하노이탑
+    - [LINK](https://www.youtube.com/watch?v=uSSC0aKXbWQ)
     - 문제 : 한 번에 옮길 수 없는 원반을 작은 원반 위에 놓지 않으면서 n개의 원반 모두 마지막 기둥으로 옮기시오
     - 입력 : 옮기려는 원반 n개
     - 출력 : 원반을 옮기는 순서
