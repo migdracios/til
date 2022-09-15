@@ -164,3 +164,46 @@ def plus_cycle(default_number, input_number, cycle):
 input_number = int(input())
 plus_cycle(input_number, input_number, 0)
 ```
+
+## 4344. 평균 비율 출력 알고리즘
+    - 반복문을 전부 재귀호출로 분석하여 알고리즘을 설계
+    - lambda와 filter 메서드를 사용하여 코드를 줄이는 가독성 리팩토링
+
+```python
+# 테스트케이스 리스트 저장 함수
+def save_score_list(testcase_num, testcase_list):
+    '''
+    1. 테스트케이스 수, 빈 리스트를 인자로 받음
+    2. 테스트케이스의 수 만큼 반복해서 리스트에 어펜딩해야하므로 테스트케이스 수가 0이 되면 리스트를 리턴, 아니면 재개
+    3. 인자로 받은 리스트에 테스트케이스를 입력받아 어펜딩
+    4. 테스트케이스 수를 1 감소시키고 데이터가 들어간 리스트를 담아 재귀호출
+    '''
+    if testcase_num == 0 : return testcase_list
+    testcase_list.append(list(map(int, input().split())))
+    return save_score_list(testcase_num-1, testcase_list)   
+
+
+# 테스트케이스 평균 비율 출력 함수
+def find_avg_per(testcase_list):
+    '''
+    1. 테스트케이스가 모두 담긴 리스트만 입력 받음
+    2. 테스트케이스의 0번째 리스트를 호출해 리스트(학생 수를 제외한)의 합 / 학생 수 평균값 계산
+    3. 계산한 평균 값을 조건으로 filter 메서드를 사용하여 평균 값을 넘는 데이터만 선별
+    4. 선별한 데이터 / 학생 수로 평균 비율 계산
+    5. fstring을 활용하여 3번째 자릿수까지 퍼센테이지로 출력
+    '''
+    if testcase_list == [] : return
+    average_num = sum(testcase_list[0][1:]) / testcase_list[0][0]
+    count_morethan_average = len(list(filter(lambda x: x>average_num, testcase_list[0][1:])))
+    '''for testcase in testcase_list[0][1:]:
+        if testcase > average_num:
+            count_morethan_average += 1'''
+    average_per = count_morethan_average / testcase_list[0][0]
+    print(f"{average_per*100:.3f}%")
+    del testcase_list[0]
+    return find_avg_per(testcase_list)
+    
+testcase_num = int(input())
+testcase_list = save_score_list(testcase_num, testcase_list=[])
+find_avg_per(testcase_list)
+```
