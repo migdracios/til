@@ -61,11 +61,10 @@ def find_avg_per(testcase_list):
     if testcase_list == [] : return
     average_num = sum(testcase_list[0][1:]) / testcase_list[0][0]
     count_morethan_average = len(list(filter(lambda x: x>average_num, testcase_list[0][1:])))
-    # count_num = 0
-    # for testcase in testcase_list:
-    #     if testcase > average_num:
-    #         count_num += 1
-    average_per = float(count_morethan_average) / float(testcase_list[0][0])
+    '''for testcase in testcase_list[0][1:]:
+        if testcase > average_num:
+            count_morethan_average += 1'''
+    average_per = count_morethan_average / testcase_list[0][0]
     print(f"{average_per*100:.3f}%")
     del testcase_list[0]
     return find_avg_per(testcase_list)
