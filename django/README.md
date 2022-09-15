@@ -4,4 +4,4 @@
 
 
 ## 목차
-- [🚩DRF 공식문서로 Pagination을 구현하자]()
+- [🚩DRF 공식문서로 Pagination을 구현하자](https://github.com/migdracios/til/blob/main/django/drf-pagination.md)
