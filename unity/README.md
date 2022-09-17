@@ -26,6 +26,8 @@
 ### ✍InvokeRepeat 함수로 반복 호출하기
 1. InvokeRepeat("호출할 함수 이름", 0, 간격 시간); 을 사용하여 Instantiate 함수를 반복 호출한다
 
+<br>
+
 ## 🔥트러블 슈팅. 함수 호출 위치 확인하기!
     - 헷갈리지 말아야 할 점은 Instantiate 할 함수를 만들고, InvokeRepeat 함수에서 해당 함수를 호출해야 함
     - update 함수에 Instantiate 함수를 호출한다면, 프레임 별로 객체 생성을 반복 실행하므로 와르르 빗방울이 쏟아짐
@@ -34,7 +36,7 @@
 <summary>함수를 Update에 담아버리면?</summary>
 <div markdown="1">
 
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/97969957/190846838-cec72dfa-0b45-4389-bf9a-55deb3b629aa.gif)
 
 </div>
 </details>
