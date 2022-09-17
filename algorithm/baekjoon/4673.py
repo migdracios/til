@@ -29,75 +29,16 @@ n을 d(n)의 생성자라고 한다. 위의 수열에서 33은 39의 생성자�
 
 '''
 
+numbers = set(range(1, 10000))
+remove_set = set()  # 생성자가 있는 숫자 set
+for num in numbers :
+    for n in str(num):
+        num += int(n)
+    remove_set.add(num)  # add: 집합에 요소를 추가할 때
 
-# #테스트 1번
-# def kaprekar(number):
-#     # 알고리즘 설계
-#     '''
-#     1. n과 각 자릿 수를 더하는 함수 생성
-#     2. 함수 재귀호출
-#     '''
-#     # 함수 설계
-#     '''
-#     1. number를 함수의 인자로 받음
-#     2. number를 문자열로 바꿔 각 길이만큼 반복해 리스트로 만듦
-#     3. number와 리스트를 sum한 값과 더함, print로 해당 숫자를 출력
-#     4. 더한 값을 인자로 함수 재귀호출
-#     5. 10000보다 크거나 같다면 함수리턴
-#     '''
-#     number_list = list(int(num) for num in str(number))
-#     kaprekar_number = number + sum(number_list)
-#     # print(f"더한 값은 {kaprekar_number}")
-#     if kaprekar_number >= 10000: return
-#     return kaprekar(kaprekar_number)
-
-# kaprekar(1)
-
-import sys
-sys.setrecursionlimit(10**7)
-
-
-# 테스트 2번
-'''
-알고리즘 설계
-- 1부터 시작해서 카프레카 함수의 결괏값으로 나온 숫자를 1부터 1만까지의 리스트에서 제거
-- 카프레카 함수의 결괏값이 1만이 넘는다면 함수 종료
-- 카프레카 함수가 종료되면 리스트 print로 출력
-'''
-
-def kaprekar(number, selfnum_list):
-    '''
-    1. number과 selfnum_list를 인자로 받음
-    2. number를 문자열로 바꿔 각 길이만큼 반복해 리스트로 만듦
-    3. number와 리스트를 sum한 값과 더해 result 변수로 할당
-    4. 더한 값이 10000이 넘는다면 selfnum_list 반환
-    5. 넘지 않는다면 result, selfnum_list를 인자로 셀프넘버 함수 호출
-    6. number+1, selfnum_lsit를 인자로 담아 재귀호출
-    '''
-    number_list = list(int(num) for num in str(number))
-    result = number + sum(number_list)
-    if result >= 10000: return selfnum_list
-    selfnum_list = make_selfnum_list(result, selfnum_list)
-    return kaprekar(number+1, selfnum_list)
-    
-def make_selfnum_list(number, selfnum_list):
-    '''
-    1. number, selfnum_list를 인자로 받음
-    2. selfnum_list에서 number 값을 제거
-    3. selfnum_list 반환
-    '''
-    if not number in selfnum_list: return selfnum_list
-    selfnum_list.remove(number)
-    return selfnum_list
-
-init_list = [i for i in range(1, 10001)]
-selfnum_list = kaprekar(1, init_list)
-for i in selfnum_list:
-    print(selfnum_list)
-
-
-
-
+self_numbers = numbers - remove_set  # set의 '-' 연산자로 차집합을 구함
+for self_num in sorted(self_numbers):  # sorted 함수로 정렬
+    print(self_num)
 
     
     
