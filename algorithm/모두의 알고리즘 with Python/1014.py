@@ -23,11 +23,19 @@ def search_number(target_list, target_num):
     4. 있다면 해당 값의 인덱스를 return
     5. 없다면 -1 return
     '''
+    
+    
 
     if target_num in target_list:
         return target_list.index(target_num)
     return -1
 
+# 반복문 버전
+def search_num(target_list, target_num):
+    for case_number in target_list:
+        if case_number == target_num:
+            return target_list.index(case_number)
+    return -1
 
 input_number_list = [17, 92, 18, 33, 58, 7, 33, 42]
 print(search_number(input_number_list, 18))
